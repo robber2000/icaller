@@ -1,0 +1,36 @@
+名称:         IEMonitor.BHO
+发布者:        (未验证) 福建三朵云网络科技有限公司
+类型:         浏览器帮助程序对象
+架构:         32 位
+版本:         1.0.0.0
+文件日期:       ‎2020‎年‎3‎月‎17‎日，‏‎22:14
+上次访问日期:     ‎2020‎年‎7‎月‎9‎日，‏‎21:05
+类 ID:       {2788CB25-EF9A-54C1-B43C-E30D1A4A1992}
+使用计数:       336
+阻止次数:       60
+文件:         ClearCard.DLL
+文件夹:        C:\Users\Chen\Desktop\bho-master\bin\x86\Debug
+
+
+C# 开发BHO IE浏览器辅助对象注册安装小结
+C# 创建BHO浏览器插件，仅适用于IE浏览器（对于性能和效率更优的方式用C++）
+
+BHO插件是在IE启动进程的时候附加到IE中的Dll，在部署安装的时候用.NET FrameWork进行注册；
+
+注册方式简单直接的为强签名：
+
+使用regasm进行注册：(32位系统注册)
+
+regasm /codebase BHO路径(部署的dll的绝对路，如：'C:\\System32\\BHO.dll')
+
+在.NET Framework4.0环境下用批处理注册示例：
+
+%SystemRoot%\Microsoft.NET\Framework\v4.0.30319\regasm /codebase "%~dp0BHO.dll";
+
+这样在IE浏览器加载的时候，去读注册表中codebase的值（该BHO.dll的绝对路径）来把该dll挂载到IE进程了。
+
+ 
+
+64位系统注册的批处理为：（此时的dll需要支持64位操作系统）
+
+%SystemRoot%\Microsoft.NET\Framework64\v4.0.30319\regasm /codebase "%~dp0BHO.dll";

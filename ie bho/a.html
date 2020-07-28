@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function createXMLHttpRequest() {
+            if (window.XMLHttpRequest) {
+                xmlHttp = new XMLHttpRequest();
+            } else if (window.ActiveXObject) {
+                xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');
+            }
+            return xmlHttp
+        }
+        var xmlHttp = createXMLHttpRequest();
+        xmlHttp.onreadystatechange = function () {};
+        xmlHttp.open('POST', 'http://121.204.198.52:8809/v13/opendata/test/', true);
+        xmlHttp.setRequestHeader('Content-Type', 'application/json');
+        xmlHttp.send(JSON.stringify({
+            'A': 333
+        }));
+        string aa = "{'data':'"+msg+"'}";
+    </script>
+</body>
+
+</html>

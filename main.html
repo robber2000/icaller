@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>main</title>
+</head>
+<body>
+  <div id="mdiv">主窗口
+
+    var iframes=document.getElementsByTagName("iframe"); 
+for(var i=0;i<iframes.length;i++){ 	
+
+if(iframes[i].name=="main"){
+ var  current= iframes[i].contentDocument || iframes[i].contentWindow.document  
+  //console.log(iframes[i].contentWindow.document )
+
+  console.log(current.getElementById('mdiv').innerText);
+}
+console.log(iframes[i].name);
+
+ }
+  </div>
+</body>
+</html>

@@ -20,3 +20,15 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+server/dist
+server/node_modules
+toexe
+server/public/dist/js/app.7d765224.js
+ie bho/bin/Release/bholog/error@2018-06-07.txt
+ie bho/obj
+
+server/public/dist
+server/public/tt
+ie bho/bin
+
